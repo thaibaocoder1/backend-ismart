@@ -15,11 +15,7 @@ const app = express();
 db.connect();
 // Setup cors
 const corsOptions = {
-  origin: [
-    'http://localhost:5173',
-    'http://localhost:4173',
-    'https://ismart-fullstack.vercel.app',
-  ],
+  origin: 'https://ismart-fullstack.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,

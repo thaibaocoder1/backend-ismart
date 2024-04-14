@@ -1,0 +1,2 @@
+Header set Access-Control-Allow-Origin "https://example.com"
+Header set Access-Control-Allow-Credentials "true"
