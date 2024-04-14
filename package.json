@@ -4,8 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --inspect src/index.js",
-    "watch": "sass src/resources/scss:src/public/css --watch"
+    "dev": "nodemon --inspect src/index.js",
+    "watch": "sass src/resources/scss:src/public/css --watch",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
