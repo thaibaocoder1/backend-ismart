@@ -281,10 +281,10 @@ class ProductController {
     try {
       req.body.thumb = {
         data: Buffer.from(
-          `http://localhost:3001/uploads/${req.file.originalname}`,
+          `https://backend-ismart.onrender.com/${req.file.originalname}`,
         ),
         contentType: req.file.mimetype,
-        fileName: `http://localhost:3001/uploads/${req.file.originalname}`,
+        fileName: `https://backend-ismart.onrender.com/${req.file.originalname}`,
       };
       const productExist = await Product.findOne({ code: req.body.code });
       if (productExist) {
@@ -327,9 +327,9 @@ class ProductController {
         }
       } else {
         req.body.thumb = {
-          data: `http://localhost:3001/uploads/${req.file.originalname}`,
+          data: `https://backend-ismart.onrender.com/${req.file.originalname}`,
           contentType: req.file.mimetype,
-          fileName: `http://localhost:3001/uploads/${req.file.originalname}`,
+          fileName: `https://backend-ismart.onrender.com/${req.file.originalname}`,
         };
         await Product.findOneAndUpdate({ _id: req.params.id }, req.body, {
           new: true,
