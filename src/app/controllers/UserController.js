@@ -415,9 +415,9 @@ class UserController {
       }
       if (user.role === 'User') {
         res.cookie('refreshToken', refreshToken, {
-          httpOnly: false,
+          httpOnly: true,
           secure: true,
-          sameSite: 'strict',
+          sameSite: 'none',
           path: '/',
           expires: new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
@@ -434,9 +434,9 @@ class UserController {
         });
       } else {
         res.cookie('refreshTokenAdmin', refreshToken, {
-          httpOnly: false,
+          httpOnly: true,
           secure: true,
-          sameSite: 'strict',
+          sameSite: 'none',
           path: '/',
           expires: new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
@@ -490,9 +490,9 @@ class UserController {
         );
         if (user) {
           res.cookie('refreshToken', newRefreshToken, {
-            httpOnly: false,
+            httpOnly: true,
             secure: true,
-            sameSite: 'strict',
+            sameSite: 'none',
             path: '/',
             expires: new Date(
               Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
@@ -553,9 +553,9 @@ class UserController {
         );
         if (user) {
           res.cookie('refreshTokenAdmin', newRefreshToken, {
-            httpOnly: false,
+            httpOnly: true,
             secure: true,
-            sameSite: 'strict',
+            sameSite: 'none',
             path: '/',
             expires: new Date(
               Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
