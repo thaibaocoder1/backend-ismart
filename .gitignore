@@ -1,6 +1,3 @@
 .vscode
 *.env
-.htaccess
 node_modules
-src/public/css
-src/public/css-admin
