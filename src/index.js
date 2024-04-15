@@ -6,7 +6,6 @@ const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const db = require('./config/db');
 const routes = require('./routes');
-const session = require('express-session');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -14,22 +13,6 @@ dotenv.config();
 const app = express();
 // Connect database
 db.connect();
-// session
-app.use(
-  session({
-    secret: 'your-secret-key',
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      httpOnly: true,
-      secure: true,
-      sameSite: 'none',
-      domain: 'ismart-fullstack.vercel.app',
-      path: '/',
-      expires: new Date(Date.now() + Number(process.env.EXPIRE_DATE_COOKIE)),
-    },
-  }),
-);
 // Setup cors
 const corsOptions = {
   origin: 'https://ismart-fullstack.vercel.app',
