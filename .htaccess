@@ -1,2 +1,0 @@
-Header set Access-Control-Allow-Origin "https://ismart-fullstack.vercel.app"
-Header set Access-Control-Allow-Credentials "true"
