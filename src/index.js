@@ -35,6 +35,12 @@ app.use(function (req, res, next) {
     'Origin, X-Requested-With, Content-Type, Accept, Authorization',
   );
   res.header('Access-Control-Allow-Credentials', true);
+  res.cookie('token', 'token', {
+    httpOnly: true,
+    secure: true,
+    path: '/',
+    sameSite: 'strict',
+  });
   next();
 });
 app.use(cookieParser());
