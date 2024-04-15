@@ -418,6 +418,8 @@ class UserController {
           httpOnly: true,
           domain: 'ismart-fullstack.vercel.app',
           secure: true,
+          sameSite: 'none',
+          path: '/',
           expires: new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
           ),
@@ -436,6 +438,8 @@ class UserController {
           httpOnly: true,
           domain: 'ismart-fullstack.vercel.app',
           secure: true,
+          sameSite: 'none',
+          path: '/',
           expires: new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
           ),
@@ -492,6 +496,7 @@ class UserController {
             domain: 'ismart-fullstack.vercel.app',
             path: '/',
             secure: true,
+            sameSite: 'none',
             expires: new Date(
               Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
             ),
@@ -555,6 +560,7 @@ class UserController {
             domain: 'ismart-fullstack.vercel.app',
             path: '/',
             secure: true,
+            sameSite: 'none',
             expires: new Date(
               Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
             ),

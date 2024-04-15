@@ -20,7 +20,6 @@ const corsOptions = {
   credentials: true,
   optionsSuccessStatus: 204,
   exposedHeaders: ['set-cookie'],
-  sameSite: 'none',
 };
 // Environment variables
 const port = process.env.PORT || 3000;
