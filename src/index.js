@@ -39,6 +39,7 @@ app.use(function (req, res, next) {
     httpOnly: true,
     secure: true,
     path: '/',
+    domain: 'ismart-fullstack.vercel.app',
     sameSite: 'strict',
   });
   next();
