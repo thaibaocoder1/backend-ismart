@@ -74,7 +74,7 @@ class UserController {
     try {
       const { ...data } = req.body;
       if (req.file) {
-        data.imageUrl = `https://backend-ismart.onrender.com/uploads/${req.file.originalname}`;
+        data.imageUrl = `https://backend-ismart.vercel.app/uploads/${req.file.originalname}`;
       }
       const user = await User.findOne({ email: data.email });
       if (user) {
@@ -146,7 +146,7 @@ class UserController {
         }
       } else {
         if (req.file && payload.password !== '') {
-          payload.imageUrl = `https://backend-ismart.onrender.com/uploads/${req.file.originalname}`;
+          payload.imageUrl = `https://backend-ismart.vercel.app/uploads/${req.file.originalname}`;
           if (payload.admin && payload.admin === 'true') {
             await User.findOneAndUpdate({ _id: req.params.id }, payload, {
               new: true,
@@ -165,7 +165,7 @@ class UserController {
           }
         } else {
           if (req.file) {
-            payload.imageUrl = `https://backend-ismart.onrender.com/uploads/${req.file.originalname}`;
+            payload.imageUrl = `https://backend-ismart.vercel.app/uploads/${req.file.originalname}`;
             delete payload.password;
             delete payload.password_confirmation;
             await User.findOneAndUpdate({ _id: req.params.id }, payload, {
