@@ -35,6 +35,12 @@ app.use(function (req, res, next) {
     'Origin, X-Requested-With, Content-Type, Accept, Authorization',
   );
   res.header('Access-Control-Allow-Credentials', true);
+  res.cookie('test', 'tes', {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'none',
+    domain: 'ismart-fullstack.vercel.app',
+  });
   next();
 });
 app.use(cookieParser());
