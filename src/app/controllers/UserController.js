@@ -419,7 +419,6 @@ class UserController {
           secure: true,
           sameSite: 'none',
           path: '/',
-          domain: 'ismart-fullstack.vercel.app',
           expires: new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
           ),

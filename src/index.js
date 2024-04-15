@@ -41,7 +41,7 @@ app.use(function (req, res, next) {
 app.use(cookieParser());
 app.use(
   session({
-    secret: 'your-secret-key',
+    secret: process.env.ACCESS_TOKEN_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
