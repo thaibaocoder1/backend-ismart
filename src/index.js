@@ -35,14 +35,6 @@ app.use(function (req, res, next) {
     'Origin, X-Requested-With, Content-Type, Accept, Authorization',
   );
   res.header('Access-Control-Allow-Credentials', true);
-  res.cookie('refreshTokenAdmin', 'refreshToken', {
-    httpOnly: true,
-    secure: true,
-    sameSite: 'none',
-    path: '/',
-    domain: 'ismart-fullstack.vercel.app',
-    expires: new Date(Date.now() + Number(process.env.EXPIRE_DATE_COOKIE)),
-  });
   next();
 });
 app.use(cookieParser());
