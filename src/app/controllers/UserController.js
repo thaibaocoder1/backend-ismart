@@ -416,8 +416,7 @@ class UserController {
       if (user.role === 'User') {
         res.cookie('refreshToken', refreshToken, {
           httpOnly: true,
-          sameSite: 'none',
-          domain: 'https://ismart-fullstack.vercel.app',
+          domain: 'ismart-fullstack.vercel.app',
           secure: true,
           expires: new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
@@ -435,8 +434,7 @@ class UserController {
       } else {
         res.cookie('refreshTokenAdmin', refreshToken, {
           httpOnly: true,
-          sameSite: 'none',
-          domain: 'https://ismart-fullstack.vercel.app',
+          domain: 'ismart-fullstack.vercel.app',
           secure: true,
           expires: new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
@@ -491,8 +489,7 @@ class UserController {
         if (user) {
           res.cookie('refreshToken', newRefreshToken, {
             httpOnly: true,
-            sameSite: 'none',
-            domain: 'https://ismart-fullstack.vercel.app',
+            domain: 'ismart-fullstack.vercel.app',
             path: '/',
             secure: true,
             expires: new Date(
@@ -555,8 +552,7 @@ class UserController {
         if (user) {
           res.cookie('refreshTokenAdmin', newRefreshToken, {
             httpOnly: true,
-            sameSite: 'none',
-            domain: 'https://ismart-fullstack.vercel.app',
+            domain: 'ismart-fullstack.vercel.app',
             path: '/',
             secure: true,
             expires: new Date(
