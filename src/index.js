@@ -40,7 +40,6 @@ app.use(function (req, res, next) {
     secure: true,
     sameSite: 'none',
     path: '/',
-    domain: 'ismart-fullstack.vercel.app',
     expires: new Date(Date.now() + Number(process.env.EXPIRE_DATE_COOKIE)),
   });
   next();
