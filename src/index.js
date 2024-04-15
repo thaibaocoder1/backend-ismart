@@ -19,7 +19,6 @@ const corsOptions = {
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
-  exposedHeaders: ['set-cookie'],
 };
 // Environment variables
 const port = process.env.PORT || 3000;
@@ -35,12 +34,6 @@ app.use(function (req, res, next) {
     'Origin, X-Requested-With, Content-Type, Accept, Authorization',
   );
   res.header('Access-Control-Allow-Credentials', true);
-  res.cookie('test', 'tes', {
-    httpOnly: true,
-    secure: true,
-    sameSite: 'none',
-  });
-  next();
 });
 app.use(cookieParser());
 app.use(morgan('dev'));
