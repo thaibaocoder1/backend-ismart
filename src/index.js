@@ -19,6 +19,7 @@ const corsOptions = {
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
+  exposedHeaders: ['set-cookie'],
 };
 // Environment variables
 const port = process.env.PORT || 3000;
