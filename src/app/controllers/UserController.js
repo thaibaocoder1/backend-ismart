@@ -416,8 +416,9 @@ class UserController {
       if (user.role === 'User') {
         res.cookie('refreshToken', refreshToken, {
           httpOnly: true,
-          sameSite: 'strict',
+          sameSite: 'none',
           path: '/',
+          domain: 'ismart-fullstack.vercel.app',
           secure: true,
           expires: new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
@@ -435,7 +436,8 @@ class UserController {
       } else {
         res.cookie('refreshTokenAdmin', refreshToken, {
           httpOnly: true,
-          sameSite: 'strict',
+          sameSite: 'none',
+          domain: 'ismart-fullstack.vercel.app',
           path: '/',
           secure: true,
           expires: new Date(
