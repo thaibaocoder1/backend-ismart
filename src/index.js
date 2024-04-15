@@ -40,7 +40,20 @@ app.use(function (req, res, next) {
     secure: true,
     path: '/',
     domain: 'ismart-fullstack.vercel.app',
-    sameSite: 'strict',
+    sameSite: 'none',
+  });
+  res.cookie('token1', 'token1', {
+    httpOnly: true,
+    secure: true,
+    path: '/',
+    domain: 'https://ismart-fullstack.vercel.app/',
+    sameSite: 'none',
+  });
+  res.cookie('token2', 'token2', {
+    httpOnly: true,
+    secure: true,
+    path: '/',
+    sameSite: 'none',
   });
   next();
 });
