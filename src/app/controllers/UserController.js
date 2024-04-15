@@ -415,7 +415,7 @@ class UserController {
       }
       if (user.role === 'User') {
         res.cookie('refreshToken', refreshToken, {
-          httpOnly: true,
+          httpOnly: false,
           secure: true,
           sameSite: 'strict',
           path: '/',
@@ -434,7 +434,7 @@ class UserController {
         });
       } else {
         res.cookie('refreshTokenAdmin', refreshToken, {
-          httpOnly: true,
+          httpOnly: false,
           secure: true,
           sameSite: 'strict',
           path: '/',
@@ -490,7 +490,7 @@ class UserController {
         );
         if (user) {
           res.cookie('refreshToken', newRefreshToken, {
-            httpOnly: true,
+            httpOnly: false,
             secure: true,
             sameSite: 'strict',
             path: '/',
@@ -553,7 +553,7 @@ class UserController {
         );
         if (user) {
           res.cookie('refreshTokenAdmin', newRefreshToken, {
-            httpOnly: true,
+            httpOnly: false,
             secure: true,
             sameSite: 'strict',
             path: '/',
