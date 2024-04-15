@@ -39,7 +39,7 @@ app.use(function (req, res, next) {
     secure: true,
     sameSite: 'none',
     path: '/',
-    domain: '/',
+    domain: 'backend-ismart.vercel.app',
     expires: new Date(Date.now() + Number(process.env.EXPIRE_DATE_COOKIE)),
   });
   next();
