@@ -19,6 +19,7 @@ const corsOptions = {
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
+  exposedHeaders: 'Set-Cookie',
 };
 // Environment variables
 const port = process.env.PORT || 3000;
@@ -39,7 +40,6 @@ app.use(function (req, res, next) {
     secure: true,
     sameSite: 'none',
     path: '/',
-    domain: 'app-randomideas.onrender.com',
     expires: new Date(Date.now() + Number(process.env.EXPIRE_DATE_COOKIE)),
   });
   next();
