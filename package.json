@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "nodemon --inspect src/index.js",
     "watch": "sass src/resources/scss:src/public/css --watch",
-    "start": "node src/index.js"
+    "start": "node --openssl-legacy-provider src/index.js"
   },
   "keywords": [],
   "author": "",
