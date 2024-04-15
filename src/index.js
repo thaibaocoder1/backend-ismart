@@ -49,7 +49,6 @@ app.use(
       httpOnly: true,
       sameSite: 'none',
       domain: 'ismart-fullstack.vercel.app',
-      maxAge: 24 * 60 * 60 * 1000,
     },
   }),
 );
