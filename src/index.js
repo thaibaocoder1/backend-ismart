@@ -39,19 +39,19 @@ app.use(function (req, res, next) {
   next();
 });
 app.use(cookieParser());
-app.use(
-  session({
-    secret: process.env.ACCESS_TOKEN_SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      secure: true,
-      httpOnly: true,
-      sameSite: 'none',
-      domain: 'ismart-fullstack.vercel.app',
-    },
-  }),
-);
+// app.use(
+//   session({
+//     secret: process.env.ACCESS_TOKEN_SECRET,
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {
+//       secure: true,
+//       httpOnly: true,
+//       sameSite: 'none',
+//       domain: 'ismart-fullstack.vercel.app',
+//     },
+//   }),
+// );
 app.use(morgan('dev'));
 app.use(
   express.urlencoded({
