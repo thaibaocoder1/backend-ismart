@@ -419,7 +419,6 @@ class UserController {
           secure: true,
           sameSite: 'none',
           path: '/',
-          domain: 'ismart-fullstack.vercel.app',
           expires: new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
           ),
@@ -795,7 +794,7 @@ class UserController {
           },
         );
         if (user) {
-          res.clearCookie('refreshToken', { path: '/' });
+          res.clearCookie('refreshToken');
           res.status(status.StatusCodes.OK).json({
             success: true,
             data: {
