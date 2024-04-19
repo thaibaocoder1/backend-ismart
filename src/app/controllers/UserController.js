@@ -418,6 +418,7 @@ class UserController {
           httpOnly: true,
           secure: true,
           sameSite: 'none',
+          Partitioned,
           path: '/',
           expires: new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
@@ -437,6 +438,7 @@ class UserController {
           httpOnly: true,
           secure: true,
           sameSite: 'none',
+          Partitioned,
           path: '/',
           expires: new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
@@ -493,6 +495,7 @@ class UserController {
             httpOnly: true,
             secure: true,
             sameSite: 'none',
+            Partitioned,
             path: '/',
             expires: new Date(
               Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
@@ -556,6 +559,7 @@ class UserController {
             httpOnly: true,
             secure: true,
             sameSite: 'none',
+            Partitioned,
             path: '/',
             expires: new Date(
               Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
