@@ -414,16 +414,12 @@ class UserController {
         refreshToken = user.refreshToken;
       }
       if (user.role === 'User') {
-        res.cookie('refreshToken', refreshToken, {
-          httpOnly: true,
-          secure: true,
-          sameSite: 'none',
-          Partitioned,
-          path: '/',
-          expires: new Date(
+        res.setHeader(
+          'Set-Cookie',
+          `refreshToken=${refreshToken}; Expires=${new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
-          ),
-        });
+          )}; Path=/; HttpOnly; SameSite=None; Secure; Partitioned;`,
+        );
         res.status(status.StatusCodes.CREATED).json({
           success: true,
           data: {
@@ -434,16 +430,12 @@ class UserController {
           },
         });
       } else {
-        res.cookie('refreshTokenAdmin', refreshToken, {
-          httpOnly: true,
-          secure: true,
-          sameSite: 'none',
-          Partitioned,
-          path: '/',
-          expires: new Date(
+        res.setHeader(
+          'Set-Cookie',
+          `refreshTokenAdmin=${refreshToken}; Expires=${new Date(
             Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
-          ),
-        });
+          )}; Path=/; HttpOnly; SameSite=None; Secure; Partitioned;`,
+        );
         res.status(status.StatusCodes.CREATED).json({
           success: true,
           data: {
@@ -491,16 +483,12 @@ class UserController {
           },
         );
         if (user) {
-          res.cookie('refreshToken', newRefreshToken, {
-            httpOnly: true,
-            secure: true,
-            sameSite: 'none',
-            Partitioned,
-            path: '/',
-            expires: new Date(
+          res.setHeader(
+            'Set-Cookie',
+            `refreshToken=${newRefreshToken}; Expires=${new Date(
               Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
-            ),
-          });
+            )}; Path=/; HttpOnly; SameSite=None; Secure; Partitioned;`,
+          );
           res.status(status.StatusCodes.CREATED).json({
             success: true,
             data: {
@@ -555,16 +543,12 @@ class UserController {
           },
         );
         if (user) {
-          res.cookie('refreshTokenAdmin', newRefreshToken, {
-            httpOnly: true,
-            secure: true,
-            sameSite: 'none',
-            Partitioned,
-            path: '/',
-            expires: new Date(
+          res.setHeader(
+            'Set-Cookie',
+            `refreshTokenAdmin=${newRefreshToken}; Expires=${new Date(
               Date.now() + Number(process.env.EXPIRE_DATE_COOKIE),
-            ),
-          });
+            )}; Path=/; HttpOnly; SameSite=None; Secure; Partitioned;`,
+          );
           res.status(status.StatusCodes.CREATED).json({
             success: true,
             data: {
